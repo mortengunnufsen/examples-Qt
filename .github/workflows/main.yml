@@ -18,7 +18,7 @@ jobs:
         env 
         g++ -v
         cd qml-states
-        sudo qmake qml-states.pro
+        sudo /opt/Qt/5.11.3/gcc_64/bin/qmake qml-states.pro
         sudo make -j2
         
         
