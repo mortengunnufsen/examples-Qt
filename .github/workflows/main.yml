@@ -20,5 +20,10 @@ jobs:
         cd qml-states
         sudo /opt/Qt/5.11.3/gcc_64/bin/qmake qml-states.pro
         sudo make -j2
+        ls -l
+    - uses: actions/upload-artifact@v1
+      with:
+       name: my-artifact
+       path: qml-states
         
         
