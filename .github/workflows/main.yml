@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: rabits/qt:5.11-desktop
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the application
+      run: |
+        cd qml-states
+        sudo /opt/Qt/5.11.3/gcc_64/bin/qmake qml-states.pro
+        sudo make -j2
+        ls -l
+    - uses: actions/upload-artifact@v1
+      with:
+       name: qml-states
+       path: qml-states
+        
+        
