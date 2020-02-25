@@ -17,5 +17,8 @@ jobs:
         echo test, and deploy your project.
         env 
         g++ -v
+        cd qml-states
+        qmake qml-states.pro
+        make -j2
         
         
